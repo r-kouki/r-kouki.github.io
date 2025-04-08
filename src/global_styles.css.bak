@@ -1,0 +1,40 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+:root {
+  --primary: #2A9D8F;
+  --secondary: #E76F51;
+  --background: #1a1a1a;
+  --text: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn {
+  @apply px-6 py-2 rounded-lg transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-[#2A9D8F] hover:bg-opacity-80 text-white;
+}
+
+.btn-outline {
+  @apply border-2 border-[#2A9D8F] text-[#2A9D8F] hover:bg-[#2A9D8F] hover:text-white;
+}
+
+section {
+  @apply scroll-mt-20;
+}

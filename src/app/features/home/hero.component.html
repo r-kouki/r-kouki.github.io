@@ -1,0 +1,36 @@
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+  <div id="particles-js" class="absolute inset-0"></div>
+  
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+      <span class="gradient-text">Aspiring Software Engineer</span>
+      <br>
+      & AI/Data Science Specialist
+    </h1>
+    
+    <p class="text-xl md:text-2xl mb-8 text-gray-300">
+      Transforming data into solutions with code, algorithms, and innovation.
+    </p>
+    
+    <div class="flex flex-wrap gap-4 justify-center">
+      <button (click)="scrollToSection('about')" class="btn btn-primary">
+        About Me
+      </button>
+      <button (click)="scrollToSection('projects')" class="btn btn-primary">
+        View Projects
+      </button>
+      <a href="assets/abderrahman-kouki.pdf" download class="btn btn-outline">
+        Download CV
+      </a>
+      <button (click)="scrollToSection('contact')" class="btn btn-primary">
+        Contact Me
+      </button>
+    </div>
+
+    <div class="mt-12">
+      <div class="typewriter text-lg md:text-xl text-gray-400">
+        {{ currentText }}
+      </div>
+    </div>
+  </div>
+</section> 

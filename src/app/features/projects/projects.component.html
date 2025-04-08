@@ -1,0 +1,66 @@
+<section class="py-20 bg-gray-800">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Technical Projects</h2>
+
+    <div class="flex justify-center gap-4 mb-12">
+      <button 
+        *ngFor="let filter of filters"
+        (click)="setFilter(filter)"
+        [class.bg-primary]="currentFilter === filter"
+        class="px-4 py-2 rounded-full text-sm transition-all"
+        [class.bg-gray-700]="currentFilter !== filter"
+      >
+        {{ filter }}
+      </button>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        *ngFor="let project of filteredProjects"
+        class="bg-gray-900 rounded-lg overflow-hidden transition-transform hover:scale-105"
+      >
+        <div class="aspect-video overflow-hidden">
+          <img [src]="project.image" [alt]="project.title" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-semibold">{{ project.title }}</h3>
+            <span *ngIf="project.status" class="text-xs bg-primary text-white px-2 py-1 rounded-full">{{ project.status }}</span>
+          </div>
+          <p class="text-gray-400 mb-3">{{ project.description }}</p>
+          
+          <div *ngIf="project.achievements && project.achievements.length > 0" class="mb-4">
+            <p class="text-sm font-medium text-gray-300 mb-2">Key Achievements:</p>
+            <ul class="list-disc pl-5 text-sm text-gray-400">
+              <li *ngFor="let achievement of project.achievements" class="mb-1">{{ achievement }}</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span 
+              *ngFor="let tech of project.techStack"
+              class="px-2 py-1 bg-gray-800 rounded-full text-xs"
+            >
+              {{ tech }}
+            </span>
+          </div>
+
+          <div class="flex gap-4">
+            <a 
+              *ngIf="project.github"
+              [href]="project.github"
+              target="_blank"
+              class="text-primary hover:text-secondary transition-colors"
+            >
+              GitHub
+            </a>
+            <button class="text-primary hover:text-secondary transition-colors">
+              Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

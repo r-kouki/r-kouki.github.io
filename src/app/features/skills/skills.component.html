@@ -1,0 +1,91 @@
+<section class="py-20 bg-gray-800">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Technical Skills</h2>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let category of skillCategories" class="bg-gray-900 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold mb-4 text-primary">{{ category.name }}</h3>
+        
+        <div class="space-y-4">
+          <div *ngFor="let skill of category.skills">
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-300">{{ skill.name }}</span>
+              <span class="text-gray-400">{{ skill.level }}%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" 
+                [style.width.%]="skill.level"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-16">
+      <h3 class="text-2xl font-semibold mb-6 text-center">Tools & Frameworks</h3>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <div 
+          *ngFor="let tool of tools"
+          class="px-4 py-2 bg-gray-900 rounded-full flex items-center gap-2"
+        >
+          <i [class]="tool.icon"></i>
+          <span>{{ tool.name }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-16">
+      <h3 class="text-2xl font-semibold mb-8 text-center">Certifications</h3>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div 
+          *ngFor="let cert of certifications"
+          class="bg-gray-900 p-5 rounded-lg border border-gray-700 transition-all hover:border-primary"
+        >
+          <div class="flex justify-between items-start">
+            <div class="flex items-start gap-3">
+              <div *ngIf="cert.icon" class="text-primary text-xl mt-1">
+                <i [class]="cert.icon"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white mb-1">{{ cert.name }}</h4>
+                <p class="text-gray-400 text-sm">{{ cert.issuer }}</p>
+              </div>
+            </div>
+            <span class="bg-gray-800 text-gray-400 text-xs px-2 py-1 rounded">{{ cert.date }}</span>
+          </div>
+          <div class="mt-4" *ngIf="cert.link">
+            <a [href]="cert.link" target="_blank" class="text-primary hover:text-secondary text-sm flex items-center gap-1">
+              <i class="fas fa-external-link-alt"></i> View Credential
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-16">
+      <h3 class="text-2xl font-semibold mb-8 text-center">Awards & Recognition</h3>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div 
+          *ngFor="let award of awards"
+          class="bg-gray-900 p-5 rounded-lg border border-gray-700 transition-all hover:border-primary"
+        >
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-semibold text-white mb-1">{{ award.name }}</h4>
+              <p class="text-gray-400 text-sm">{{ award.issuer }}</p>
+            </div>
+            <span class="bg-gray-800 text-gray-400 text-xs px-2 py-1 rounded">{{ award.date }}</span>
+          </div>
+          <div class="mt-3" *ngIf="award.description">
+            <p class="text-gray-400 text-sm">{{ award.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
