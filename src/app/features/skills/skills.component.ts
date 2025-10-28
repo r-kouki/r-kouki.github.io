@@ -41,70 +41,98 @@ interface Award {
 export class SkillsComponent {
   skillCategories: SkillCategory[] = [
     {
+      name: 'AI & Data Science',
+      skills: [
+        { name: 'Machine Learning', level: 95 },
+        { name: 'Deep Learning', level: 90 },
+        { name: 'NLP & RAG', level: 85 },
+        { name: 'Data Analytics', level: 95 }
+      ]
+    },
+    {
       name: 'Programming Languages',
       skills: [
         { name: 'Python', level: 95 },
+        { name: 'R', level: 85 },
         { name: 'JavaScript/TypeScript', level: 90 },
-        { name: 'Java', level: 80 },
-        { name: 'C/C++', level: 75 }
+        { name: 'Java', level: 80 }
       ]
     },
     {
-      name: 'Data Science & ML',
+      name: 'MLOps & Automation',
       skills: [
-        { name: 'Machine Learning', level: 90 },
-        { name: 'Deep Learning', level: 85 },
-        { name: 'Data Analysis', level: 95 },
-        { name: 'NLP', level: 80 }
+        { name: 'MLflow', level: 85 },
+        { name: 'Docker', level: 90 },
+        { name: 'CI/CD Pipelines', level: 85 },
+        { name: 'Azure ML', level: 80 }
       ]
     },
     {
-      name: 'Web Development',
+      name: 'AI Automation Tools',
       skills: [
+        { name: 'LangGraph', level: 90 },
+        { name: 'CrewAI', level: 90 },
+        { name: 'n8n', level: 85 },
+        { name: 'FastAPI', level: 90 }
+      ]
+    },
+    {
+      name: 'Data Visualization',
+      skills: [
+        { name: 'Power BI', level: 85 },
+        { name: 'R (ggplot2)', level: 85 },
+        { name: 'Pandas', level: 95 },
+        { name: 'Matplotlib/Seaborn', level: 90 }
+      ]
+    },
+    {
+      name: 'Web & Software Development',
+      skills: [
+        { name: 'MERN Stack', level: 85 },
         { name: 'Angular', level: 90 },
-        { name: 'React', level: 85 },
-        { name: 'Node.js', level: 80 },
-        { name: 'HTML/CSS', level: 90 }
+        { name: 'GraphQL', level: 80 },
+        { name: '.NET', level: 75 }
       ]
     },
     {
-      name: 'Databases',
+      name: 'Databases & Big Data',
       skills: [
-        { name: 'SQL', level: 90 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'Redis', level: 75 },
-        { name: 'PostgreSQL', level: 85 }
+        { name: 'SQL/PostgreSQL', level: 90 },
+        { name: 'MongoDB', level: 85 },
+        { name: 'Apache Kafka', level: 80 },
+        { name: 'Apache Spark', level: 85 }
       ]
     },
     {
       name: 'DevOps & Cloud',
       skills: [
-        { name: 'Docker', level: 85 },
+        { name: 'Azure', level: 85 },
         { name: 'AWS', level: 80 },
-        { name: 'CI/CD', level: 75 },
-        { name: 'Kubernetes', level: 70 }
-      ]
-    },
-    {
-      name: 'Data Engineering',
-      skills: [
-        { name: 'Apache Spark', level: 85 },
-        { name: 'ETL Pipelines', level: 90 },
-        { name: 'Data Warehousing', level: 80 },
-        { name: 'Airflow', level: 75 }
+        { name: 'Git/GitHub/GitLab', level: 95 },
+        { name: 'Kubernetes', level: 75 }
       ]
     }
   ];
 
   tools: Tool[] = [
+    { name: 'LangChain', icon: 'fas fa-link' },
+    { name: 'LangGraph', icon: 'fas fa-project-diagram' },
+    { name: 'CrewAI', icon: 'fas fa-users-cog' },
+    { name: 'n8n', icon: 'fas fa-robot' },
+    { name: 'MLflow', icon: 'fas fa-flask' },
     { name: 'TensorFlow', icon: 'fab fa-python' },
     { name: 'PyTorch', icon: 'fab fa-python' },
+    { name: 'Power BI', icon: 'fas fa-chart-line' },
+    { name: 'R (tidyverse)', icon: 'fas fa-chart-bar' },
+    { name: 'FastAPI', icon: 'fas fa-bolt' },
     { name: 'Angular', icon: 'fab fa-angular' },
     { name: 'React', icon: 'fab fa-react' },
     { name: 'Node.js', icon: 'fab fa-node-js' },
     { name: 'Docker', icon: 'fab fa-docker' },
-    { name: 'AWS', icon: 'fab fa-aws' },
+    { name: 'Azure', icon: 'fab fa-microsoft' },
     { name: 'Git', icon: 'fab fa-git-alt' },
+    { name: 'Kafka', icon: 'fas fa-stream' },
+    { name: 'GraphQL', icon: 'fas fa-code-branch' },
     { name: 'VS Code', icon: 'fas fa-code' },
     { name: 'Jupyter', icon: 'fas fa-book-open' }
   ];
@@ -115,6 +143,48 @@ export class SkillsComponent {
       issuer: 'Microsoft',
       date: '2023',
       icon: 'fab fa-microsoft'
+    },
+    {
+      name: 'Building Transformer-Based NLP Applications',
+      issuer: 'NVIDIA',
+      date: '2023',
+      icon: 'fas fa-robot'
+    },
+    {
+      name: 'Fundamentals of Deep Learning',
+      issuer: 'NVIDIA',
+      date: '2022',
+      icon: 'fas fa-brain'
+    },
+    {
+      name: 'Getting Started with Diffusion Models',
+      issuer: 'NVIDIA',
+      date: '2024',
+      icon: 'fas fa-brain'
+    },
+    {
+      name: 'PMI Management Ready',
+      issuer: 'Project Management Institute',
+      date: '2024',
+      icon: 'fas fa-tasks'
+    },
+    {
+      name: 'DELF B2 (French Language)',
+      issuer: 'French Ministry of Education',
+      date: '2023',
+      icon: 'fas fa-language'
+    },
+    {
+      name: 'AI Automation with LangGraph & CrewAI',
+      issuer: 'Self-Directed Learning',
+      date: '2024',
+      icon: 'fas fa-cogs'
+    },
+    {
+      name: 'n8n Workflow Automation',
+      issuer: 'Self-Directed Learning',
+      date: '2024',
+      icon: 'fas fa-sitemap'
     },
     {
       name: 'CCNA 1 & 2 Certification',
@@ -133,18 +203,6 @@ export class SkillsComponent {
       issuer: 'Securinet',
       date: '2022',
       icon: 'fas fa-search'
-    },
-    {
-      name: 'Building Transformer-Based NLP Applications',
-      issuer: 'NVIDIA',
-      date: '2023',
-      icon: 'fas fa-robot'
-    },
-    {
-      name: 'Fundamentals of Deep Learning',
-      issuer: 'NVIDIA',
-      date: '2022',
-      icon: 'fas fa-brain'
     }
   ];
   

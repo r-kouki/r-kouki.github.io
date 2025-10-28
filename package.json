@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng build --configuration production --base-href=/ && npx angular-cli-ghpages --dir=dist/demo/browser --repo=https://github.com/r-kouki/r-kouki.github.io.git"
+    "deploy": "ng build --configuration production --base-href=/ && git checkout new-main && git pull && rm -rf * && cp -r dist/demo/browser/* . && git add . && git commit -m \"Deploy to GitHub Pages\" && git push -f origin new-main:main && git checkout master"
   },
   "dependencies": {
     "@angular/animations": "^19.2.3",
@@ -28,6 +28,7 @@
     "@angular/build": "^19.2.3",
     "@angular/cli": "^19.2.3",
     "@angular/compiler-cli": "^19.2.3",
+    "@types/node": "^24.7.0",
     "angular-cli-ghpages": "^2.0.3",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.35",

@@ -10,10 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HeroComponent implements OnInit {
   private texts = [
+    'MLOps Pipelines',
+    'AI Automation',
+    'Data Analytics',
     'Machine Learning',
-    'Data Pipelines',
-    'ERP Systems',
-    'Full-Stack Dev'
+    'RAG Systems',
+    'AI Agents'
   ];
   currentText = this.texts[0];
   private currentIndex = 0;
