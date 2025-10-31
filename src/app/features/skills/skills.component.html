@@ -1,20 +1,25 @@
-<section class="py-20 bg-gray-800">
+<section class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Technical Skills</h2>
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text animate-slide-down">Technical Skills</h2>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div *ngFor="let category of skillCategories" class="bg-gray-900 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold mb-4 text-primary">{{ category.name }}</h3>
+      <div *ngFor="let category of skillCategories; let i = index" 
+           class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 animate-scale-in"
+           [style.animation-delay]="(i * 0.1) + 's'">
+        <h3 class="text-xl font-semibold mb-4 text-primary flex items-center gap-2">
+          <i class="fas fa-code"></i>
+          {{ category.name }}
+        </h3>
         
         <div class="space-y-4">
           <div *ngFor="let skill of category.skills">
             <div class="flex justify-between mb-1">
-              <span class="text-gray-300">{{ skill.name }}</span>
-              <span class="text-gray-400">{{ skill.level }}%</span>
+              <span class="text-gray-700 dark:text-gray-300 font-medium">{{ skill.name }}</span>
+              <span class="text-gray-500 dark:text-gray-400">{{ skill.level }}%</span>
             </div>
-            <div class="w-full bg-gray-700 rounded-full h-2">
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
               <div 
-                class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" 
+                class="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full transition-all duration-1000 ease-out hover:scale-x-105" 
                 [style.width.%]="skill.level"
               ></div>
             </div>
@@ -23,27 +28,29 @@
       </div>
     </div>
     
-    <div class="mt-16">
-      <h3 class="text-2xl font-semibold mb-6 text-center">Tools & Frameworks</h3>
+    <div class="mt-16 animate-fade-in">
+      <h3 class="text-2xl font-semibold mb-6 text-center text-gray-800 dark:text-gray-200">Tools & Frameworks</h3>
       
       <div class="flex flex-wrap justify-center gap-4">
         <div 
-          *ngFor="let tool of tools"
-          class="px-4 py-2 bg-gray-900 rounded-full flex items-center gap-2"
+          *ngFor="let tool of tools; let i = index"
+          class="px-5 py-3 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center gap-2 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 border border-gray-200 dark:border-gray-700 animate-scale-in"
+          [style.animation-delay]="(i * 0.05) + 's'"
         >
-          <i [class]="tool.icon"></i>
-          <span>{{ tool.name }}</span>
+          <i [class]="tool.icon" class="text-primary"></i>
+          <span class="text-gray-700 dark:text-gray-300 font-medium">{{ tool.name }}</span>
         </div>
       </div>
     </div>
     
-    <div class="mt-16">
-      <h3 class="text-2xl font-semibold mb-8 text-center">Certifications</h3>
+    <div class="mt-16 animate-slide-up">
+      <h3 class="text-2xl font-semibold mb-8 text-center text-gray-800 dark:text-gray-200">Certifications</h3>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div 
-          *ngFor="let cert of certifications"
-          class="bg-gray-900 p-5 rounded-lg border border-gray-700 transition-all hover:border-primary"
+          *ngFor="let cert of certifications; let i = index"
+          class="bg-gray-50 dark:bg-gray-900 p-5 rounded-xl border-2 border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-primary hover:shadow-xl transform hover:-translate-y-1 animate-scale-in"
+          [style.animation-delay]="(i * 0.1) + 's'"
         >
           <div class="flex justify-between items-start">
             <div class="flex items-start gap-3">
@@ -51,14 +58,14 @@
                 <i [class]="cert.icon"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-white mb-1">{{ cert.name }}</h4>
-                <p class="text-gray-400 text-sm">{{ cert.issuer }}</p>
+                <h4 class="font-semibold text-gray-800 dark:text-white mb-1">{{ cert.name }}</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ cert.issuer }}</p>
               </div>
             </div>
-            <span class="bg-gray-800 text-gray-400 text-xs px-2 py-1 rounded">{{ cert.date }}</span>
+            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">{{ cert.date }}</span>
           </div>
           <div class="mt-4" *ngIf="cert.link">
-            <a [href]="cert.link" target="_blank" class="text-primary hover:text-secondary text-sm flex items-center gap-1">
+            <a [href]="cert.link" target="_blank" class="text-primary hover:text-secondary text-sm flex items-center gap-1 hover:gap-2 transition-all">
               <i class="fas fa-external-link-alt"></i> View Credential
             </a>
           </div>
@@ -66,23 +73,27 @@
       </div>
     </div>
     
-    <div class="mt-16">
-      <h3 class="text-2xl font-semibold mb-8 text-center">Awards & Recognition</h3>
+    <div class="mt-16 animate-fade-in">
+      <h3 class="text-2xl font-semibold mb-8 text-center text-gray-800 dark:text-gray-200">Awards & Recognition</h3>
       
       <div class="grid md:grid-cols-2 gap-6">
         <div 
-          *ngFor="let award of awards"
-          class="bg-gray-900 p-5 rounded-lg border border-gray-700 transition-all hover:border-primary"
+          *ngFor="let award of awards; let i = index"
+          class="bg-gray-50 dark:bg-gray-900 p-5 rounded-xl border-2 border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-secondary hover:shadow-xl transform hover:-translate-y-1 animate-slide-up"
+          [style.animation-delay]="(i * 0.1) + 's'"
         >
           <div class="flex justify-between items-start">
-            <div>
-              <h4 class="font-semibold text-white mb-1">{{ award.name }}</h4>
-              <p class="text-gray-400 text-sm">{{ award.issuer }}</p>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-trophy text-secondary text-2xl mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-white mb-1">{{ award.name }}</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">{{ award.issuer }}</p>
+              </div>
             </div>
-            <span class="bg-gray-800 text-gray-400 text-xs px-2 py-1 rounded">{{ award.date }}</span>
+            <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full font-medium">{{ award.date }}</span>
           </div>
           <div class="mt-3" *ngIf="award.description">
-            <p class="text-gray-400 text-sm">{{ award.description }}</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">{{ award.description }}</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,116 @@
+# ==============================
+# ABDE RRAH MEN KOUKI - PORTFOLIO DATA
+# For use in Supabase RAG or vector search
+# ==============================
+
+## GENERAL INFORMATION
+Name: Abderrahmen Kouki
+Location: Sousse, Tunisia
+Email: abderrahmen.kouki.software@gmail.com
+LinkedIn: https://linkedin.com/in/abderrahmen-kouki-101648335
+Website: https://koukiabderrahmen.me
+Current Goal: Seeking internship in Data Science, AI Automation, or MLOps
+
+## PROFESSIONAL IDENTITY
+Abderrahmen Kouki is a Data Science and AI Automation Engineer with a strong background in applied mathematics and software development.  
+He specializes in building intelligent and automated systems that integrate machine learning, data analytics, and DevOps principles.  
+He is passionate about applying mathematics, automation, and AI to create efficient, data-driven decision systems.
+
+## CAREER OBJECTIVE
+Aspiring Data Scientist and AI Automation Engineer aiming to join a research or engineering team for a Data Science, AI Automation, or MLOps internship.  
+Focused on developing predictive models, automating machine learning workflows, and deploying scalable AI systems.
+
+## EDUCATION
+- Ecole Polytechnique de Sousse (2023–2026)
+  Software Engineering – Data Science & AI Path  
+  Focus: Machine Learning, NLP, MLOps, Big Data, Business Intelligence, Web Development
+- Université Paris Dauphine – PSL (2021–2023)
+  Applied Mathematics for Computer Science & Decision  
+  Focus: Probability, Linear Algebra, Optimization, Statistical Modeling
+- Institut Préparatoire aux Études d’Ingénieurs de Tunis (2018–2021)
+  Maths–Physics Preparatory Class
+- Tunisian Baccalaureate in Mathematics (2018)
+- French Scientific Baccalaureate – Life and Earth Sciences (2017)
+
+## TECHNICAL SKILLS
+- Languages: Python, R, JavaScript, Java, C#, C, C++
+- Data Science & AI: Machine Learning, Deep Learning, NLP, RAG, AI Agents (CrewAI), MCP Protocols, Predictive Analytics
+- Automation & MLOps: LangGraph, n8n, MLflow, FastAPI, Docker, REST APIs, CI/CD Pipelines
+- Data Analytics & Visualization: Power BI, R (tidyverse, ggplot2), Pandas, Spark, SQL, Data Warehousing
+- Web & Systems: MERN Stack, MEAN Stack, Flask, GraphQL, Kafka, .NET, UML, ERP Systems
+- Collaboration & Networking: Git, GitHub, GitLab, Trello, Slack, Basic Networking, API Deployment
+- Tools: Azure AI, VS Code, Jupyter, RStudio, Postman, Linux
+
+## CERTIFICATIONS
+- Microsoft Azure AI-900 – AI Fundamentals (Microsoft)
+- NVIDIA Deep Learning, NLP Transformers & Diffusion Models (NVIDIA)
+- PMI Management Ready (Project Management Institute)
+- Applied AI Automation – LangGraph, CrewAI, n8n (Self-directed projects)
+- DELF B2 – French Language Certification
+
+## KEY PROJECTS
+
+### MLOps Automation Pipeline (2025)
+Automated model retraining and deployment using MLflow, FastAPI, Docker, and Azure.  
+Implemented CI/CD workflows for reproducible ML pipelines and version-controlled models.
+
+### Diabetes Prediction System (2024)
+Built a supervised learning model for diabetes prediction on the BRFSS dataset.  
+Implemented feature selection, model comparison, and deployment via Streamlit.
+
+### R Data Analytics Project (2025)
+Performed exploratory and inferential statistical analysis using R and ggplot2.  
+Developed reproducible visualizations and correlation reports for data insights.
+
+### Multi-Agent Debating Simulation Game (2025)
+Developed an interactive AI debate simulator with multiple agents using CrewAI and LangGraph.  
+Integrated LLM reasoning, adaptive dialogue, and gamification mechanisms.
+
+### RAG Knowledge Bot (2024)
+Developed a document-based retrieval-augmented generation chatbot using LangChain, n8n, and FAISS.  
+Automated query pipelines for efficient knowledge retrieval.
+
+### MCP Protocol Coordination (2025)
+Explored multi-agent collaboration using Model Context Protocol (MCP).  
+Focused on secure message routing and AI model synchronization.
+
+### MERN Business Dashboard (2025)
+Created a business intelligence dashboard integrating Power BI analytics and REST APIs.  
+Stack: MongoDB, Express, React, Node.js, Chart.js.
+
+### MEAN Car Sales Website (2024)
+Developed a car listing and management web app for sales analytics.  
+Stack: MongoDB, Express, Angular, Node.js.
+
+### Dating App with GraphQL and Kafka (2024)
+Built an event-driven matchmaking system using GraphQL APIs and Kafka messaging.  
+Integrated microservices for scalable user communication.
+
+### C# Stock Management System (2023)
+Developed a desktop ERP system for inventory and supplier management using .NET and MySQL.  
+Included automated stock tracking, alerts, and reporting modules.
+
+## SOFT SKILLS
+- Problem-solving and analytical thinking
+- Cross-functional collaboration
+- Agile & Scrum methodology
+- Self-learning and adaptability
+- Technical writing and documentation
+
+## ACTIVITIES & ACHIEVEMENTS
+- IEEE EPS Student Branch – Member (2nd place in IEEE Xtreme Hub Competition, 2023)
+- ACM Member – Competitive programming contests
+- Founding Member – IT Lab at Université Paris Dauphine
+- 1st Place – Twise Night Water Footprint Challenge
+
+## LANGUAGES
+Arabic – Native
+English – Professional
+French – Professional
+German – Basic
+
+## PERSONAL STATEMENT
+Abderrahmen aims to combine data, automation, and AI engineering to design efficient and scalable intelligent systems.  
+His long-term ambition is to contribute to research and development in applied AI, automation, and intelligent data infrastructure.
+
+# END OF PORTFOLIO DATA

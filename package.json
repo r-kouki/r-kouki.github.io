@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:network": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "deploy": "ng build --configuration production --base-href=/ && git checkout new-main && git pull && rm -rf * && cp -r dist/demo/browser/* . && git add . && git commit -m \"Deploy to GitHub Pages\" && git push -f origin new-main:main && git checkout master"
   },

@@ -1,14 +1,21 @@
-<section class="py-20 bg-gray-800">
+<section class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Technical Projects</h2>
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text animate-slide-down">Technical Projects</h2>
 
-    <div class="flex justify-center gap-4 mb-12">
+    <div class="flex justify-center gap-4 mb-12 flex-wrap animate-fade-in">
       <button 
         *ngFor="let filter of filters"
         (click)="setFilter(filter)"
         [class.bg-primary]="currentFilter === filter"
-        class="px-4 py-2 rounded-full text-sm transition-all"
-        [class.bg-gray-700]="currentFilter !== filter"
+        [class.text-white]="currentFilter === filter"
+        [class.shadow-lg]="currentFilter === filter"
+        class="px-6 py-2 rounded-full text-sm transition-all duration-300 font-medium transform hover:scale-105"
+        [class.bg-gray-200]="currentFilter !== filter"
+        [class.dark:bg-gray-700]="currentFilter !== filter"
+        [class.text-gray-700]="currentFilter !== filter"
+        [class.dark:text-gray-300]="currentFilter !== filter"
+        [class.hover:bg-gray-300]="currentFilter !== filter"
+        [class.dark:hover:bg-gray-600]="currentFilter !== filter"
       >
         {{ filter }}
       </button>
@@ -16,46 +23,53 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div 
-        *ngFor="let project of filteredProjects"
-        class="bg-gray-900 rounded-lg overflow-hidden transition-transform hover:scale-105"
+        *ngFor="let project of filteredProjects; let i = index"
+        class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 animate-scale-in"
+        [style.animation-delay]="(i * 0.1) + 's'"
       >
-        <div class="aspect-video overflow-hidden">
-          <img [src]="project.image" [alt]="project.title" class="w-full h-full object-cover">
+        <div class="aspect-video overflow-hidden relative group">
+          <img [src]="project.image" [alt]="project.title" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
         
         <div class="p-6">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-semibold">{{ project.title }}</h3>
-            <span *ngIf="project.status" class="text-xs bg-primary text-white px-2 py-1 rounded-full">{{ project.status }}</span>
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">{{ project.title }}</h3>
+            <span *ngIf="project.status" class="text-xs bg-primary text-white px-3 py-1 rounded-full font-medium whitespace-nowrap ml-2 animate-pulse">{{ project.status }}</span>
           </div>
-          <p class="text-gray-400 mb-3">{{ project.description }}</p>
+          <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{{ project.description }}</p>
           
           <div *ngIf="project.achievements && project.achievements.length > 0" class="mb-4">
-            <p class="text-sm font-medium text-gray-300 mb-2">Key Achievements:</p>
-            <ul class="list-disc pl-5 text-sm text-gray-400">
-              <li *ngFor="let achievement of project.achievements" class="mb-1">{{ achievement }}</li>
+            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+              <i class="fas fa-star text-secondary"></i>
+              Key Achievements:
+            </p>
+            <ul class="list-disc pl-5 text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li *ngFor="let achievement of project.achievements" class="hover:text-primary transition-colors">{{ achievement }}</li>
             </ul>
           </div>
           
           <div class="flex flex-wrap gap-2 mb-4">
             <span 
               *ngFor="let tech of project.techStack"
-              class="px-2 py-1 bg-gray-800 rounded-full text-xs"
+              class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300 hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {{ tech }}
             </span>
           </div>
 
-          <div class="flex gap-4">
+          <div class="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
             <a 
               *ngIf="project.github"
               [href]="project.github"
               target="_blank"
-              class="text-primary hover:text-secondary transition-colors"
+              class="text-primary hover:text-secondary transition-colors flex items-center gap-2 font-medium group"
             >
+              <i class="fab fa-github group-hover:scale-110 transition-transform"></i>
               GitHub
             </a>
-            <button class="text-primary hover:text-secondary transition-colors">
+            <button class="text-primary hover:text-secondary transition-colors flex items-center gap-2 font-medium group">
+              <i class="fas fa-external-link-alt group-hover:scale-110 transition-transform"></i>
               Demo
             </button>
           </div>

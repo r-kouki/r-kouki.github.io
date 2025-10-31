@@ -1,38 +1,58 @@
-<section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-  <div id="particles-js" class="absolute inset-0"></div>
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+  <div id="particles-js" class="absolute inset-0 opacity-30 dark:opacity-100"></div>
   
-  <div class="container mx-auto px-4 text-center relative z-10">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+  </div>
+  
+  <div class="container mx-auto px-4 text-center relative z-10 animate-fade-in">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slide-down">
       <span class="gradient-text">Data Science & AI Automation Engineer</span>
     </h1>
     
-    <p class="text-xl md:text-2xl mb-4 text-gray-300">
+    <p class="text-xl md:text-2xl mb-4 text-gray-700 dark:text-gray-300 animate-slide-up" style="animation-delay: 0.2s;">
       Transforming data into intelligent solutions with ML, automation, and analytics.
     </p>
     
-    <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 border border-primary rounded-full text-primary mb-8">
-      <i class="fas fa-search"></i>
-      <span class="text-sm md:text-base">Currently Seeking Internship in Data Science / AI Automation / MLOps</span>
+    <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 dark:bg-primary/20 border-2 border-primary rounded-full text-primary mb-8 animate-scale-in backdrop-blur-sm" style="animation-delay: 0.4s;">
+      <i class="fas fa-search animate-pulse"></i>
+      <span class="text-sm md:text-base font-medium">Currently Seeking Internship in Data Science / AI Automation / MLOps</span>
     </div>
     
-    <div class="flex flex-wrap gap-4 justify-center">
-      <button (click)="scrollToSection('about')" class="btn btn-primary">
-        About Me
+    <div class="flex flex-wrap gap-4 justify-center animate-slide-up" style="animation-delay: 0.6s;">
+      <button (click)="scrollToSection('about')" class="btn btn-primary group">
+        <span class="flex items-center gap-2">
+          About Me
+          <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+        </span>
       </button>
-      <button (click)="scrollToSection('projects')" class="btn btn-primary">
-        View Projects
+      <button (click)="scrollToSection('projects')" class="btn btn-primary group">
+        <span class="flex items-center gap-2">
+          View Projects
+          <i class="fas fa-folder-open group-hover:scale-110 transition-transform"></i>
+        </span>
       </button>
-      <a href="assets/abderrahman-kouki.pdf" download class="btn btn-outline">
-        Download CV
+      <a href="assets/abderrahman-kouki.pdf" download class="btn btn-outline group">
+        <span class="flex items-center gap-2">
+          Download CV
+          <i class="fas fa-download group-hover:translate-y-1 transition-transform"></i>
+        </span>
       </a>
-      <button (click)="scrollToSection('contact')" class="btn btn-primary">
-        Contact Me
+      <button (click)="scrollToSection('contact')" class="btn btn-primary group">
+        <span class="flex items-center gap-2">
+          Contact Me
+          <i class="fas fa-envelope group-hover:scale-110 transition-transform"></i>
+        </span>
       </button>
     </div>
 
-    <div class="mt-12">
-      <div class="typewriter text-lg md:text-xl text-gray-400">
-        {{ currentText }}
+    <div class="mt-12 animate-fade-in" style="animation-delay: 0.8s;">
+      <div class="typewriter text-lg md:text-xl text-gray-600 dark:text-gray-400 font-mono">
+        <span class="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-lg">
+          💻 {{ currentText }}
+        </span>
       </div>
     </div>
   </div>

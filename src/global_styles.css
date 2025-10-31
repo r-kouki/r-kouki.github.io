@@ -4,19 +4,40 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Then define CSS variables */
+/* CSS Variables for theming */
 :root {
   --primary: #2A9D8F;
   --secondary: #E76F51;
-  --background: #1a1a1a;
-  --text: #ffffff;
+  --accent: #F4A261;
+  
+  /* Light mode colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --border-color: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* Then regular CSS */
+.dark {
+  /* Dark mode colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #cbd5e1;
+  --border-color: #334155;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
 body {
-  background-color: var(--background);
-  color: var(--text);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .gradient-text {
@@ -26,19 +47,111 @@ body {
   color: transparent;
 }
 
-/* Then TailwindCSS apply directives */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* Modern animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-on-scroll {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Button styles with modern effects */
 .btn {
-  @apply px-6 py-2 rounded-lg transition-all duration-300;
+  @apply px-6 py-2 rounded-lg transition-all duration-300 font-medium;
+  @apply transform hover:scale-105 active:scale-95;
+  @apply shadow-md hover:shadow-lg;
 }
 
 .btn-primary {
-  @apply bg-[#2A9D8F] hover:bg-opacity-80 text-white;
+  @apply bg-[#2A9D8F] hover:bg-opacity-90 text-white;
 }
 
 .btn-outline {
   @apply border-2 border-[#2A9D8F] text-[#2A9D8F] hover:bg-[#2A9D8F] hover:text-white;
 }
 
+/* Card styles */
+.card {
+  @apply rounded-xl transition-all duration-300;
+  @apply shadow-lg hover:shadow-2xl;
+  @apply transform hover:-translate-y-1;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.card-hover {
+  @apply transition-all duration-300 ease-out;
+  @apply hover:scale-105 hover:shadow-2xl;
+}
+
+/* Section styles */
 section {
   @apply scroll-mt-20;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  background-size: 1000px 100%;
 }
