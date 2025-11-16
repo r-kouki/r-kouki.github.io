@@ -25,58 +25,87 @@ export class ProjectsComponent {
 
   projects: Project[] = [
     {
-      title: 'MLOps Automation Pipeline',
-      description: 'Developed end-to-end MLOps pipeline automating model retraining, versioning, and deployment using industry-standard tools.',
-      category: 'Automation',
-      techStack: ['MLflow', 'Docker', 'Azure', 'Python', 'CI/CD', 'FastAPI'],
-      image: 'assets/bigdata.jpg',
+      title: 'Diabetes Risk Prediction Model',
+      description: 'Deployed interactive ML model for diabetes risk prediction with comprehensive data preprocessing and model evaluation.',
+      category: 'AI/ML',
+      techStack: ['Python', 'Streamlit', 'Spark', 'Hadoop', 'XGBoost', 'Machine Learning', 'Feature Selection'],
+      image: 'assets/diabetespred.png',
       github: 'https://github.com',
       status: 'Recent',
       achievements: [
-        'Automated ML model retraining and deployment pipeline reducing deployment time by 70%.',
-        'Integrated MLflow for experiment tracking and model versioning.',
-        'Deployed scalable inference API using FastAPI and Docker on Azure.'
+        'Processed CDC BRFSS dataset using Spark and Hadoop for distributed cleaning.',
+        'Trained calibrated XGBoost model achieving 85% accuracy.',
+        'Deployed Streamlit app delivering personalized diabetes risk insights.'
+      ]
+    },
+    {
+      title: 'MLOps Automation Pipeline',
+      description: 'Developed end-to-end MLOps pipeline automating model retraining, versioning, and deployment using industry-standard tools.',
+      category: 'Automation',
+      techStack: ['MLflow', 'DVC', 'Docker', 'Podman', 'Kubernetes', 'GitLab CI/CD', 'Azure', 'Python', 'FastAPI'],
+      image: 'assets/mlops.png',
+      github: 'https://github.com',
+      status: 'Recent',
+      achievements: [
+        'Automated ML versioning, experiment tracking, and reproducible pipelines with DVC and S3/MinIO.',
+        'Containerized models with Podman/Docker and deployed using GitLab CI/CD.',
+        'Orchestrated workloads on Kubernetes for scalable inference services.'
       ]
     },
     {
       title: 'Multi-Agent Debating Simulation Game',
       description: 'Designed and built a gamified multi-agent AI system where intelligent agents engage in structured debates using advanced reasoning.',
       category: 'AI/ML',
-      techStack: ['CrewAI', 'LangGraph', 'Python', 'LLM', 'State Management'],
-      image: 'assets/try-on.jpg',
+      techStack: ['CrewAI', 'LangGraph', 'Ollama', 'Python', 'TTS', 'State Management'],
+      image: 'assets/debate.png',
       github: 'https://github.com',
       status: 'Recent',
       achievements: [
-        'Implemented complex multi-agent orchestration using CrewAI and LangGraph.',
-        'Designed state management system for maintaining debate context and flow.',
-        'Created engaging gameplay mechanics combining AI reasoning with user interaction.'
+        'Built interactive multi-agent debating system with AI-vs-AI and Human-vs-AI modes.',
+        'Added trending topic generation, expert personas, scoring system, and leaderboard.',
+        'Integrated voice input and TTS for natural game-like debate interactions.'
+      ]
+    },
+    {
+      title: 'Inferno Gym Management Portal',
+      description: 'Comprehensive production-ready gym management system with separate admin and member portals featuring real-time booking, automated payments, and priority-based auto-booking.',
+      category: 'Web Dev',
+      techStack: ['FastAPI', 'React', 'PostgreSQL', 'Supabase', 'Material-UI', 'JWT Auth', 'Async Python'],
+      image: 'assets/gym.png',
+      github: 'https://github.com',
+      status: 'Recent',
+      achievements: [
+        'Built full-stack gym platform for memberships, booking, attendance tracking, and payments.',
+        'Developed Supabase schema with RLS, authentication, real-time updates, and admin dashboards.',
+        'Deployed REST APIs and automation used daily by a local gym.'
       ]
     },
     {
       title: 'RAG Knowledge Bot with Automation',
       description: 'Built context-aware chatbot leveraging RAG (Retrieval Augmented Generation) with automated workflow orchestration.',
       category: 'Automation',
-      techStack: ['LangChain', 'n8n', 'Python', 'Vector DB', 'RAG', 'FastAPI'],
-      image: 'assets/water.avif',
+      techStack: ['LangChain', 'FAISS', 'n8n', 'Python', 'Vector DB', 'RAG', 'FastAPI'],
+      image: 'assets/rag.png',
       github: 'https://github.com',
       status: 'Recent',
       achievements: [
-        'Integrated LangChain for advanced RAG implementation with custom retrieval strategies.',
-        'Automated knowledge base updates and query routing using n8n workflows.',
-        'Achieved 85% answer accuracy on domain-specific queries through fine-tuned embeddings.'
+        'Developed RAG chatbot with FAISS retrieval and automated document ingestion.',
+        'Used n8n for scheduled syncing, preprocessing, and workflow automation.',
+        'Achieved 85% answer accuracy on domain-specific queries.'
       ]
     },
     {
-      title: 'Real-Time Dating App with GraphQL & Kafka',
+      title: 'Real-Time Dating App with GraphQL, Kafka & Web Services',
       description: 'Engineered high-performance matchmaking platform with real-time messaging and intelligent recommendation engine.',
       category: 'Web Dev',
-      techStack: ['GraphQL', 'Apache Kafka', 'Node.js', 'React', 'MongoDB', 'WebSockets'],
-      image: 'assets/grocery.jpg',
+      techStack: ['GraphQL', 'Apache Kafka', 'REST APIs', 'Web Services', 'Node.js', 'React', 'MongoDB', 'WebSockets'],
+      image: 'assets/dating.png',
       github: 'https://github.com',
       status: 'Recent',
       achievements: [
         'Designed GraphQL API supporting real-time subscriptions for instant messaging.',
         'Implemented event-driven architecture using Apache Kafka for scalable matchmaking.',
+        'Integrated asynchronous event-driven communication for user interactions via Web Services.',
         'Built ML-based recommendation system analyzing user preferences and behavior patterns.'
       ]
     },
@@ -85,27 +114,13 @@ export class ProjectsComponent {
       description: 'Conducted comprehensive statistical analysis and created publication-ready visualizations using R for business intelligence.',
       category: 'AI/ML',
       techStack: ['R', 'tidyverse', 'ggplot2', 'dplyr', 'Statistical Analysis', 'Power BI'],
-      image: 'assets/stock.jpg',
+      image: 'assets/rdashboard.png',
       github: 'https://github.com',
       status: 'Recent',
       achievements: [
         'Performed advanced statistical analysis on datasets with 100K+ records using tidyverse.',
         'Created interactive dashboards and custom visualizations with ggplot2.',
         'Developed predictive models identifying key business trends with 92% accuracy.'
-      ]
-    },
-    {
-      title: 'Big Data & Machine Learning Pipeline',
-      description: 'Architected scalable big data processing system with predictive analytics capabilities for large-scale datasets.',
-      category: 'AI/ML',
-      techStack: ['Hadoop', 'Apache Spark', 'Python', 'Machine Learning', 'MLflow'],
-      image: 'assets/bigdata.jpg',
-      github: 'https://github.com',
-      status: 'In Progress',
-      achievements: [
-        'Implemented distributed data processing pipeline using Hadoop and Apache Spark.',
-        'Developed ML models for predictive analysis processing 10M+ records efficiently.',
-        'Optimized data cleaning workflows reducing processing time by 60%.'
       ]
     },
     {
@@ -140,20 +155,20 @@ export class ProjectsComponent {
       image: 'assets/try-on.jpg',
       github: 'https://github.com',
       achievements: [
-        'Deployed OOTDiffusion model for virtual try-on feature as part of IEEE technical challenges.',
-        'Integrated solution into mobile application enabling real-time clothing visualization.',
-        'Achieved 85% user engagement rate with the virtual try-on feature.'
+        'Implemented virtual try-on pipeline generating realistic clothing previews using OOTDiffusion.',
+        'Integrated the feature into a mobile app for real-time visualization.'
       ]
     },
     {
-      title: 'Restaurant Stock Management System',
+      title: 'C# Stock Management System for Restaurants',
       description: 'Developed comprehensive inventory management solution automating stock tracking and supplier management for restaurants.',
       category: 'Desktop',
-      techStack: ['Java', 'JavaFX', 'MySQL', 'Inventory Management', 'Reporting'],
-      image: 'assets/stock.jpg',
+      techStack: ['C#', '.NET', 'SQL Server', 'Inventory Management', 'Real-time Reporting', 'ERP'],
+      image: 'assets/stockmage.png',
       github: 'https://github.com',
       achievements: [
-        'Built full-stack inventory system using JavaFX, Java, and MySQL.',
+        'Built desktop ERP system for restaurant stock tracking and supplier management in .NET.',
+        'Added automated alerts for low inventory and real-time reporting.',
         'Implemented automated stock alerts reducing waste by 30%.',
         'Designed supplier management module streamlining procurement processes.'
       ]
@@ -175,11 +190,24 @@ export class ProjectsComponent {
       description: 'Engineered all-in-one educational platform managing student records, schedules, and library operations efficiently.',
       category: 'Desktop',
       techStack: ['Python', 'Tkinter', 'MySQL', 'Education Software', 'Database Design'],
-      image: 'assets/school.jpg',
+      image: 'assets/school.png',
       achievements: [
         'Developed comprehensive school management system using Python, Tkinter, and MySQL.',
         'Integrated modules for calendar, class, and library management.',
         'Streamlined administrative tasks reducing manual workload by 50%.'
+      ]
+    },
+    {
+      title: 'MEAN Car Sales Website',
+      description: 'Developed a car listing and management web application for sales analytics with interactive UI.',
+      category: 'Web Dev',
+      techStack: ['MongoDB', 'Express', 'Angular', 'Node.js', 'REST API', 'Authentication'],
+      image: 'assets/car.png',
+      github: 'https://github.com',
+      achievements: [
+        'Built full-stack car sales platform using MEAN stack architecture.',
+        'Implemented vehicle listing management with advanced search and filters.',
+        'Created sales analytics dashboard for tracking performance metrics.'
       ]
     }
   ];

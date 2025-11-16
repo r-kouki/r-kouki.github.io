@@ -1,5 +1,12 @@
 .angular
 dist
 node_modules
+
+# Environment files with real API keys (keep these secret!)
 src/environments/environment.ts
+src/environments/environment.prod.ts
 .env
+.env.local
+
+# Template files are safe to commit (no real keys)
+!src/environments/*.template.ts

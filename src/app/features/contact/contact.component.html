@@ -130,9 +130,10 @@
                 [class.dark:bg-gray-700]="!message.isUser"
                 [class.text-gray-800]="!message.isUser"
                 [class.dark:text-white]="!message.isUser"
-                class="max-w-[80%] rounded-lg p-3 shadow-md animate-slide-up"
+                class="max-w-[80%] rounded-lg p-3 shadow-md animate-slide-up markdown-content"
               >
-                <p>{{ message.text }}</p>
+                <div *ngIf="message.isUser" class="whitespace-pre-line">{{ message.text }}</div>
+                <div *ngIf="!message.isUser" [innerHTML]="renderMarkdown(message.text)"></div>
                 <span class="text-xs opacity-70 mt-1 block">
                   {{ message.timestamp | date:'shortTime' }}
                 </span>
