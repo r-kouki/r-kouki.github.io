@@ -16,7 +16,7 @@ function syncMotion() {
   toggle.setAttribute('aria-pressed', String(enabled));
   toggle.setAttribute('aria-label', english ? 'Enable animations' : 'Activer les animations');
   if (!enabled) {
-    document.getAnimations().forEach(animation => animation.cancel());
+    document.getAnimations().filter(animation => !(animation instanceof CSSAnimation)).forEach(animation => animation.cancel());
     document.querySelectorAll('[data-tilt]').forEach(el => el.style.removeProperty('transform'));
   }
 }
@@ -33,6 +33,33 @@ orbit.className = 'hero-orbit';
 orbit.setAttribute('aria-hidden', 'true');
 orbit.innerHTML = '<i></i><i></i><i></i><span>✳</span>';
 document.querySelector('.hero-portrait').prepend(orbit);
+
+// A persistent visual rhythm, with the same pause control as entrance animations.
+const ribbon = document.createElement('div');
+ribbon.className = 'expertise-ribbon';
+ribbon.setAttribute('aria-hidden', 'true');
+const disciplines = english ? ['Applied AI','Software engineering','Data to product','MLOps','Client delivery'] : ['IA appliquée','Génie logiciel','Des données au produit','MLOps','Solutions métier'];
+const ribbonGroup = `<div>${disciplines.map(label => `<span>${label}</span><b>✳</b>`).join('')}</div>`;
+ribbon.innerHTML = `<div class="ribbon-track">${ribbonGroup}${ribbonGroup}</div>`;
+document.querySelector('.hero').after(ribbon);
+const progress = document.createElement('div');
+progress.className = 'reading-progress';
+progress.setAttribute('aria-hidden','true');
+document.body.append(progress);
+let scrollFrame = 0;
+function updateScroll() {
+  scrollFrame = 0;
+  const extent = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${extent > 0 ? scrollY / extent : 0})`;
+  if (motionAllowed()) {
+    document.querySelector('.hero').style.setProperty('--scroll-shift', `${Math.min(scrollY * .12, 65)}px`);
+  }
+}
+addEventListener('scroll', () => {
+  if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll);
+}, { passive:true });
+updateScroll();
+document.addEventListener('visibilitychange', () => document.documentElement.classList.toggle('page-hidden', document.hidden));
 
 function enter(element, delay = 0) {
   if (!motionAllowed()) return;
