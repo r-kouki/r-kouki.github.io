@@ -119,3 +119,30 @@ document.querySelectorAll('details').forEach(detail => {
     }
   });
 });
+// Animate the emphasized headline words without replacing their readable text.
+const accents = document.querySelectorAll('h1 em, h2 em');
+accents.forEach(accent => {
+  const words = accent.textContent.trim().split(/\s+/);
+  accent.replaceChildren();
+  words.forEach((word, index) => {
+    if (index) accent.append(document.createTextNode(' '));
+    const span = document.createElement('span');
+    span.className = 'accent-word';
+    span.textContent = word;
+    span.style.setProperty('--word-delay', `${index * .16}s`);
+    accent.append(span);
+  });
+});
+if ('IntersectionObserver' in window) {
+  const accentObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('accent-visible');
+      if (motionAllowed()) entry.target.querySelectorAll('.accent-word').forEach((word, index) => {
+        word.animate([{opacity:0,translate:'0 16px',filter:'blur(4px)'},{opacity:1,translate:'0 0',filter:'blur(0)'}], {duration:850,delay:150+index*120,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'});
+      });
+      accentObserver.unobserve(entry.target);
+    });
+  }, {threshold:.4});
+  accents.forEach(accent => accentObserver.observe(accent));
+}
